@@ -14,10 +14,14 @@ var Clock = React.createClass({
 		}
 	},
 
+	start: 1000,
+
 	handleForward: function(){
 		
 		if (!this.state.ticking){
-			this.increase = setInterval(this.forward,500)
+			// this.increase = setInterval(this.forward,500),
+			this.forward()
+			
 		}
 	},
 
@@ -26,6 +30,10 @@ var Clock = React.createClass({
 			year: this.state.year + 1,
 			ticking: true
 		})
+		this.start = this.start/1.1
+		this.increase = setTimeout(this.forward,this.start)
+		//using recursion by calling forward within the forward function. By dividing start by 1.1, makes numbers go faster and faster
+
 	},
 
 	stop: function(){
@@ -36,7 +44,8 @@ var Clock = React.createClass({
 
 	handleBack: function(){
 		if(!this.state.ticking){
-			this.decrease = setInterval(this.backward,500)
+			// this.decrease = setInterval(this.backward,500)
+			this.backward()
 		}
 	},
 
@@ -45,6 +54,8 @@ var Clock = React.createClass({
 			year: this.state.year - 1,
 			ticking: true
 		})
+		this.start = this.start / 1.1
+		this.decrease = setTimeout(this.backward,this.start)
 	},
 
 	render: function(){
