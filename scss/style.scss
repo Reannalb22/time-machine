@@ -77,8 +77,13 @@ img {
 body {
     background-color: #00FFCC;
     text-align: center;
-    p {
-        font-size: 30px;
+    div {
+        transform: translateY(140%);
+
+        p {
+            font-size: 30px;
+            font-family: 'Libre Baskerville', serif;
+        }
     }
 }
 

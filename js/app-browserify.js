@@ -17,7 +17,7 @@ var Clock = React.createClass({
 	handleForward: function(){
 		
 		if (!this.state.ticking){
-			this.increase = setInterval(this.forward,1000)
+			this.increase = setInterval(this.forward,500)
 		}
 	},
 
@@ -36,7 +36,7 @@ var Clock = React.createClass({
 
 	handleBack: function(){
 		if(!this.state.ticking){
-			this.decrease = setInterval(this.backward,1000)
+			this.decrease = setInterval(this.backward,500)
 		}
 	},
 
@@ -52,8 +52,8 @@ var Clock = React.createClass({
 		<div>
 		<p> This is year: <span> {this.state.year} </span></p>
 		<button onClick = {this.handleForward}>Future, Ahead!</button>
-		<button onClick = {this.stop}>Stop!</button>
-		<button onClick = {this.handleBack}>Let's go Back in Time</button>
+		<button onClick = {this.stop}>Please Stop This Party Bus.</button>
+		<button onClick = {this.handleBack}>Back to the Time When...</button>
 		</div>
 	)}
 
